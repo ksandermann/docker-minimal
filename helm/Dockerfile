@@ -22,6 +22,6 @@ LABEL maintainer="kevin.sandermann@gmail.com"
 COPY --from=builder "/root/download/linux-amd64/helm" "/usr/local/bin/helm"
 
 RUN chmod +x "/usr/local/bin/helm" && \
-    helm init --client-only
+    helm version --client
 
 CMD ["helm"]

@@ -4,6 +4,7 @@ ARG BUILDER_VERSION
 ARG KUBECTL_VERSION
 
 ######################################################### BUILDER ######################################################
+
 FROM ksandermann/multistage-builder:$BUILDER_VERSION as builder
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"

@@ -3,8 +3,6 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
-BLDER_VERSION="2019-07-25"
-
 #from pip3
 declare -a releaseversions=(
 "2.6.0"
@@ -45,10 +43,13 @@ declare -a releaseversions=(
 
 for releaseversion in "${releaseversions[@]}";
 do
-   ANSBLE_VERSION=$releaseversion
-   docker build \
-       --pull \
-       -t ksandermann/ansible:$ANSBLE_VERSION \
-       .
-   docker push ksandermann/ansible:$ANSBLE_VERSION
+    ANSBLE_VERSION=$releaseversion
+    docker build \
+        --pull \
+        --build-arg ANSIBLE_VERSION=$ANSBLE_VERSION \
+        -t ksandermann/ansible:$ANSBLE_VERSION \
+        .
+    docker push ksandermann/ansible:$ANSBLE_VERSION
+    echo "sleeping 5 sec to ensure dockerhub image tags are sorted properly..."
+    sleep 5
 done

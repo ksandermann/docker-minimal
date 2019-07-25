@@ -1,4 +1,3 @@
-
 ARG ALPINE_VERSION
 
 FROM alpine:$ALPINE_VERSION
@@ -8,4 +7,9 @@ LABEL maintainer="kevin.sandermann@gmail.com"
 USER root
 WORKDIR /root/download
 
-RUN apk --update add openssl curl wget
+RUN apk --update add \
+    curl \
+    openssl \
+    unzip \
+    wget
+
