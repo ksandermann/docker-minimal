@@ -1,7 +1,7 @@
 # docker-minimal
-Graveyard for minimal Dockerfiles containing CLI tooling :skull: :skull: :skull:
+:skull: :skull: :skull: Graveyard for minimal Dockerfiles containing CLI tooling :skull: :skull: :skull:
 
-## ToC
+## ToC :books:
 1. [ansible](./ansible) - contains ansible and common dependencies. alpine-based. -- 
 [Dockerhub](https://hub.docker.com/r/ksandermann/ansible)
 1. [helm](./helm) - contains only helm binary and bash --
