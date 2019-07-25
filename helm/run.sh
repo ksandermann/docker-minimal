@@ -7,6 +7,7 @@ TLLER_NAMESPACE="kubetools"
 
 docker run -ti --rm \
     -v ~/.kube:/root/.kube \
+    -v ~/.helm:/root/.helm \
     ksandermann/helm:$HLM_VERSION \
     -e TILLER_NAMESPACE=$TLLER_NAMESPACE \
     bash
