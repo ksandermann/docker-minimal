@@ -1,9 +1,13 @@
 # docker-minimal
-Minimal Dockerfiles containing CLI tooling-
+Graveyard for minimal Dockerfiles containing CLI tooling :skull: :skull: :skull:
 
 ## ToC
-1. [ansible](./ansible) - contains ansible and common dependencies. alpine-based
-1. [helm](./helm) - contains only helm binary and bash
-1. [kubectl](./kubectl) - contains only kubectl binary and bash
-1. [openshift-cli](./openshift-cli) - contains only openshift-cli binary (no kubectl!) and bash
+1. [ansible](./ansible) - contains ansible and common dependencies. alpine-based. -- 
+[Dockerhub](https://hub.docker.com/r/ksandermann/ansible)
+1. [helm](./helm) - contains only helm binary and bash --
+[Dockerhub](https://hub.docker.com/r/ksandermann/helm)
+1. [kubectl](./kubectl) - contains only kubectl binary and bash --
+[Dockerhub](https://hub.docker.com/r/ksandermann/kubectl)
+1. [openshift-cli](./openshift-cli) - contains only openshift-cli binary (no kubectl!) and bash --
+[Dockerhub](https://hub.docker.com/r/ksandermann/openshift-cli)
 
