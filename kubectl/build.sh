@@ -43,7 +43,9 @@ declare -a releaseversions=(
 #"v1.13.8"
 #"v1.14.4"
 #"v1.16.0-alpha.1"
-"v1.15.1"
+#"v1.15.1"
+"v1.15.2"
+"v1.15.3"
 )
 
 for releaseversion in "${releaseversions[@]}";
