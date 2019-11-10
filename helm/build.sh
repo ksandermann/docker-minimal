@@ -32,7 +32,13 @@ declare -a releaseversions=(
 #"v2.14.0-rc.2"
 #"v2.14.1"
 #"v2.14.2"
-"v2.14.3"
+#"v2.14.3"
+#"v2.15.0"
+#"v2.15.1"
+#"v2.15.2"
+#"v2.16.0-rc.1"
+#"v2.16.0-rc.2"
+"v2.16.0"
 )
 
 for releaseversion in "${releaseversions[@]}";
