@@ -11,5 +11,5 @@ jobs:
                   --pull \
                   --build-arg ANSIBLE_VERSION=2.9.0 \
                   -t ksandermann/ansible:2.9.0 \
-                  -f ansible/Dockerfile
+                  -f ansible/Dockerfile \
                   ./ansible
