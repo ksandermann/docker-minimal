@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
-BLDER_VERSION="2019-07-25"
+BLDER_VERSION="2020-06-19"
 
 #starting 2018-08-26
 declare -a releaseversions=(
@@ -38,7 +38,28 @@ declare -a releaseversions=(
 #"v2.15.2"
 #"v2.16.0-rc.1"
 #"v2.16.0-rc.2"
-"v2.16.0"
+#"v2.16.0"
+#"v2.16.1"
+#"v2.16.2"
+#"v2.16.3"
+#"v2.16.4"
+#"v2.16.5"
+#"v2.16.6"
+#"v3.0.0"
+#"v3.0.1"
+#"v3.0.2"
+#"v3.1.3"
+#"v3.1.1"
+#"v3.1.2"
+#"v3.1.3"
+#"v3.2.0"
+#"v2.16.7"
+#"v3.2.1"
+#"v3.2.2"
+#"v3.2.3"
+#"v2.16.8"
+"v3.2.4"
+"v2.16.9"
 )
 
 for releaseversion in "${releaseversions[@]}";

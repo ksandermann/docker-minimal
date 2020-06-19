@@ -14,7 +14,7 @@ ARG KUBECTL_VERSION
 RUN wget https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl -O /root/download/kubectl
 
 ######################################################### IMAGE ########################################################
-FROM bash:5.0.7
+FROM bash:5.0.17
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"
 
