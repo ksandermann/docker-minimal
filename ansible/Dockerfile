@@ -35,11 +35,11 @@ RUN pip3 install \
 RUN pip3 install \
     ansible-lint \
     hvac \
-    jinja2==2.10 \
+    jinja2==2.11.2 \
     jmespath \
     netaddr \
     openshift \
-    pbr==5.1.1 \
+    pbr==5.4.5 \
     pip \
     pyOpenSSL \
     pyvmomi

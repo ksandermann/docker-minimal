@@ -2,8 +2,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-LPINE_VERSION="3.10.2"
-IMAGE_TAG="2019-09-17"
+LPINE_VERSION="3.12.0"
+IMAGE_TAG="2020-06-19"
 
 docker build \
     --build-arg ALPINE_VERSION=$LPINE_VERSION \

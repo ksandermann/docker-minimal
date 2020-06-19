@@ -15,7 +15,7 @@ RUN curl -SsL --retry 5 "https://get.helm.sh/helm-$HELM_VERSION-linux-amd64.tar.
 
 
 ######################################################### IMAGE ########################################################
-FROM bash:5.0.7
+FROM bash:5.0.17
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"
 
