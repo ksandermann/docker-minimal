@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-ANSBLE_VERSION="2.9.10"
+ANSBLE_VERSION="6.3.10"
 
 docker run -ti --rm \
     -v ~/.ssh:/root/.ssh \

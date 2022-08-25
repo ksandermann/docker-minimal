@@ -53,18 +53,24 @@ declare -a releaseversions=(
 #"2.9.7"
 #"2.9.8"
 #"2.9.9"
-"2.9.10"
+#"2.9.10"
+"2.10.7"
+"3.4.0"
+"4.10.0"
+"5.10.0"
+"6.3.10"
 )
 
 for releaseversion in "${releaseversions[@]}";
 do
     ANSBLE_VERSION=$releaseversion
-    docker build \
+    docker buildx build \
         --pull \
         --build-arg ANSIBLE_VERSION=$ANSBLE_VERSION \
+        --platform linux/amd64,linux/arm64 \
         -t ksandermann/ansible:$ANSBLE_VERSION \
+        --push \
         .
-    docker push ksandermann/ansible:$ANSBLE_VERSION
     echo "sleeping 5 sec to ensure dockerhub image tags are sorted properly..."
     sleep 5
 done
