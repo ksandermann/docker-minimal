@@ -11,10 +11,11 @@ LABEL maintainer="kevin.sandermann@gmail.com"
 
 ARG KUBECTL_VERSION
 
-RUN wget https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl -O /root/download/kubectl
+RUN if [[$(uname -m) == "aarch64"]]; then ARCH="arm64"; else ARCH="amd64"; fi && \
+    wget https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$ARCH/kubectl -O /root/download/kubectl
 
 ######################################################### IMAGE ########################################################
-FROM bash:5.0.17
+FROM bash:5.1.16
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"
 
