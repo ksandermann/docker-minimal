@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-BLDER_VERSION="2020-06-19"
+BLDER_VERSION="2022-08-25"
 
 #starting 01.01.2019
 declare -a releaseversions=(
@@ -85,18 +85,20 @@ declare -a releaseversions=(
 #"v1.18.1"
 #"v1.18.2"
 #"v1.18.3"
-"v1.18.4"
+#"v1.18.4"
+"v1.25.0"
 )
 
 for releaseversion in "${releaseversions[@]}";
 do
     KCTL_VERSION=$releaseversion
-    docker build \
+    docker buildx build \
         --build-arg BUILDER_VERSION=$BLDER_VERSION \
         --build-arg KUBECTL_VERSION=$KCTL_VERSION \
+        --platform linux/amd64,linux/arm64 \
+        --push \
         -t ksandermann/kubectl:$KCTL_VERSION \
         .
-    docker push ksandermann/kubectl:$KCTL_VERSION
     echo "sleeping 5 sec to ensure dockerhub image tags are sorted properly..."
     sleep 5
 done
