@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-HLM_VERSION="v2.16.9"
+HLM_VERSION="v3.9.4"
 TLLER_NAMESPACE="kubetools"
 
 docker run -ti --rm \

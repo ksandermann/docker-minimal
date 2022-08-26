@@ -8,6 +8,6 @@
 [DockerHub](https://hub.docker.com/r/ksandermann/helm)
 1. [kubectl](./kubectl) - contains only kubectl binary and bash --
 [DockerHub](https://hub.docker.com/r/ksandermann/kubectl)
-1. [openshift-cli](./openshift-cli) - contains only openshift-cli binary (no kubectl!) and bash --
+1. DEPRECATED - [openshift-cli](./openshift-cli) - contains only openshift-cli binary (no kubectl!) and bash --
 [DockerHub](https://hub.docker.com/r/ksandermann/openshift-cli)
 

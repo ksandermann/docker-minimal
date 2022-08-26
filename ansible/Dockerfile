@@ -3,7 +3,7 @@
 ARG ANSIBLE_VERSION
 
 ######################################################### IMAGE ########################################################
-FROM python:3.6.9-alpine3.10
+FROM python:3.10.6-alpine3.16
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"
 
@@ -20,27 +20,16 @@ RUN apk update && \
     openssl-dev \
     python3-dev
 
-
-#shoutout to https://github.com/pyca/cryptography/issues/4264#issuecomment-392781146
-
-#update pip
-RUN pip3 install pip --upgrade
-
-#install pip dependencies
-RUN pip3 install \
-    cryptography \
-    pycrypto
-
-#install common requirements separately to have this as a fix image layer and to prevent ansible-lint from updateing ansible
+#install common requirements separately to have this as a fix image layer and to prevent ansible-lint from updating ansible
 RUN pip3 install \
     ansible-lint \
+    cryptography \
     hvac \
-    jinja2==2.11.2 \
+    jinja2==3.1.2 \
     jmespath \
     netaddr \
-    openshift \
-    pbr==5.4.5 \
-    pip \
+    pbr \
+    pycrypto \
     pyOpenSSL \
     pyvmomi
 

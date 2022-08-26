@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 
-BLDER_VERSION="2020-06-19"
+BLDER_VERSION="2022-08-25"
 
 #starting 2018-08-26
 declare -a releaseversions=(
@@ -58,20 +58,22 @@ declare -a releaseversions=(
 #"v3.2.2"
 #"v3.2.3"
 #"v2.16.8"
-"v3.2.4"
+#"v3.2.4"
 "v2.16.9"
+"v3.9.4"
 )
 
 for releaseversion in "${releaseversions[@]}";
 do
     HLM_VERSION=$releaseversion
-    docker build \
+    docker buildx build \
         --pull \
+        --platform linux/amd64,linux/arm64 \
         --build-arg BUILDER_VERSION=$BLDER_VERSION \
         --build-arg HELM_VERSION=$HLM_VERSION \
         -t ksandermann/helm:$HLM_VERSION \
+        --push \
         .
-    docker push ksandermann/helm:$HLM_VERSION
     echo "sleeping 5 sec to ensure dockerhub image tags are sorted properly..."
     sleep 5
 done
