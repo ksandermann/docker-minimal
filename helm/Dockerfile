@@ -16,7 +16,7 @@ RUN curl -SsL --retry 5 "https://get.helm.sh/helm-$HELM_VERSION-linux-$TARGETARC
 
 
 ######################################################### IMAGE ########################################################
-FROM bash:5.1.16
+FROM bash:latest
 MAINTAINER Kevin Sandermann <kevin.sandermann@gmail.com>
 LABEL maintainer="kevin.sandermann@gmail.com"
 

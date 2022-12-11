@@ -1,0 +1,37 @@
+name: Build Helm Images
+run-name: ${{ github.actor }} is BUILDING Helm Images 🚀
+on: workflow_dispatch
+#  schedule:
+#    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+#    - cron: '20 3 * * WED'
+#    - cron: '20 3 * * SUN'
+jobs:
+  Clean-Repo:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Fetch origin
+        run: git fetch origin
+      - name: Checkout master
+        run: git checkout master
+      - name: Pull origin
+        run: git pull origin master && git pull
+  Build-Images:
+    timeout-minutes: 30
+    needs: Clean-Repo
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v2.1.0
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Build Images
+        run: cd ./helm && bash ./build.sh
