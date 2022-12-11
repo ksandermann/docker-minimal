@@ -1,10 +1,10 @@
 name: Build Helm Images
 run-name: ${{ github.actor }} is BUILDING Helm Images 🚀
-on: workflow_dispatch
-#  schedule:
-#    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-#    - cron: '20 3 * * WED'
-#    - cron: '20 3 * * SUN'
+on:
+  schedule:
+    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron: '20 3 * * WED'
+    - cron: '20 3 * * SUN'
 jobs:
   Clean-Repo:
     runs-on: [self-hosted, Linux, X64]
