@@ -1,10 +1,10 @@
-name: Build Kubectl Images
-run-name: ${{ github.actor }} is BUILDING Kubectl Images 🚀
+name: Build Multistage-Builder Image
+run-name: ${{ github.actor }} is BUILDING Multistage-Builder Image 🚀
 on: workflow_dispatch
 #  schedule:
 #    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-#    - cron: '19 3 * * WED'
-#    - cron: '19 3 * * SUN'
+#    - cron: '18 3 * * WED'
+#    - cron: '18 3 * * SUN'
 jobs:
   Clean-Repo:
     runs-on: [self-hosted, Linux, X64]
@@ -34,4 +34,4 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Build Images
-        run: cd ./kubectl && bash ./build.sh
+        run: cd ./multistage-builder && bash ./build.sh

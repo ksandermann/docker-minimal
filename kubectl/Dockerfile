@@ -12,9 +12,9 @@ LABEL maintainer="kevin.sandermann@gmail.com"
 ARG TARGETARCH
 ARG KUBECTL_VERSION
 
-RUN wget https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$TARGETARCH/kubectl -O /root/download/kubectl
+RUN wget -q https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$TARGETARCH/kubectl -O /root/download/kubectl
 RUN mkdir -p /root/download/kubelogin/ && mkdir -p /root/download/binaries/ && \
-  wget https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-${TARGETARCH}.zip -O /root/download/kubelogin/kubelogin.zip && \
+  wget -q https://github.com/Azure/kubelogin/releases/latest/download/kubelogin-linux-${TARGETARCH}.zip -O /root/download/kubelogin/kubelogin.zip && \
   unzip /root/download/kubelogin/kubelogin.zip -d /root/download/kubelogin/ && \
   mv /root/download/kubelogin/bin/linux_${TARGETARCH}/kubelogin "/root/download/binaries/kubelogin"
 
