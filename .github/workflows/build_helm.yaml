@@ -1,5 +1,5 @@
-name: Build Kubectl Images
-run-name: ${{ github.actor }} is BUILDING Kubectl Images 🚀
+name: Build Helm Images
+run-name: ${{ github.actor }} is BUILDING Helm Images 🚀
 on: workflow_dispatch
 #  schedule:
 #    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
@@ -34,4 +34,4 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Build Images
-        run: cd ./kubectl && bash ./build.sh
+        run: cd ./helm && bash ./build.sh
