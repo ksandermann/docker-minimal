@@ -16,7 +16,7 @@ jobs:
       - name: Checkout master
         run: git checkout master
       - name: Pull origin
-        run: git pull origin master
+        run: git pull origin master && git pull
   Build-Images:
     timeout-minutes: 30
     needs: Clean-Repo
