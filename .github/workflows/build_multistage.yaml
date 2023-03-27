@@ -3,8 +3,8 @@ run-name: ${{ github.actor }} is BUILDING Multistage-Builder Image 🚀
 on:
   schedule:
     #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-    - cron: '18 3 * * WED'
-    - cron: '18 3 * * SUN'
+    - cron: '18 3 * * MON'
+    - cron: '18 3 * * FRI'
 jobs:
   Clean-Repo:
     runs-on: [self-hosted, Linux, X64]
