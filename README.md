@@ -10,4 +10,3 @@
 [DockerHub](https://hub.docker.com/r/ksandermann/ansible)
 1. DEPRECATED - [openshift-cli](./archive/openshift-cli) - contains only openshift-cli binary (no kubectl!) and bash --
 [DockerHub](https://hub.docker.com/r/ksandermann/openshift-cli)
-
