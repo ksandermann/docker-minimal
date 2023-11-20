@@ -2,7 +2,7 @@ name: Build Helm Images
 run-name: ${{ github.actor }} is BUILDING Helm Images 🚀
 on:
   schedule:
-    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule 
     - cron: '20 3 * * MON'
     - cron: '20 3 * * FRI'
 jobs:
