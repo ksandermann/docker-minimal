@@ -2,7 +2,7 @@ name: Build Kubectl Images
 run-name: ${{ github.actor }} is BUILDING Kubectl Images 🚀
 on:
   schedule:
-    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule 
+    #UTC - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
     - cron: '19 3 * * MON'
     - cron: '19 3 * * FRI'
 jobs:
