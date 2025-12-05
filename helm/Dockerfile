@@ -25,6 +25,6 @@ ARG TARGETARCH
 COPY --from=builder "/root/download/linux-$TARGETARCH/helm" "/usr/local/bin/helm"
 
 RUN chmod +x "/usr/local/bin/helm" && \
-    helm version --client
+    helm version
 
 CMD ["helm"]
